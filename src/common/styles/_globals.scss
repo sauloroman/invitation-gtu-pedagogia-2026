@@ -1,0 +1,118 @@
+@use './variables' as vars;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+    cursor: pointer;
+    -webkit-appearance: button;
+    appearance: button;
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+textarea {
+    resize: vertical;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.invitation {
+    max-width: 96rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--has-menu-bar {
+        margin-top: calc(vars.$menu-bar-height + 1rem);
+    }
+}
+
+video {
+
+    &::-webkit-media-controls,
+    &::-webkit-media-controls-start-playback-button,
+    &::-webkit-media-controls-overlay-play-button,
+    &::-webkit-media-controls-play-button,
+    &::-webkit-media-controls-timeline,
+    &::-webkit-media-controls-current-time-display,
+    &::-webkit-media-controls-time-remaining-display,
+    &::-webkit-media-controls-mute-button,
+    &::-webkit-media-controls-toggle-closed-captions-button,
+    &::-webkit-media-controls-volume-slider,
+    &::-webkit-media-controls-enclosure,
+    &::-webkit-media-controls-panel {
+        display: none !important;
+        -webkit-appearance: none !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+}

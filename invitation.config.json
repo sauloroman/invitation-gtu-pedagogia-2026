@@ -1,0 +1,139 @@
+{
+  "eventType": "graduation",
+  "packageTier": "graduation_tickets",
+  "theme": {
+    "fontPack": 2,
+    "palette": 9,
+    "buttonVariant": "primary",
+    "menu": {
+      "show": true,
+      "variant": "floating",
+      "title": "Licenciatura en Pedagogía 2026",
+      "buttonVariant": "primary"
+    },
+    "music": {
+      "show": true,
+      "variant": "floating",
+      "buttonVariant": "primary",
+      "songTitle": "Música de fondo",
+      "artistName": "Música del evento"
+    }
+  },
+  "config": {
+    "hasTicketingSystem": true,
+    "hasRSVP": true,
+    "hasMusic": true,
+    "hasMenu": true
+  },
+  "sections": {
+    "hero": {
+      "showHero": true,
+      "career": "Licenciatura en Pedagogía",
+      "school": "Grupo Tecnológico Universitario",
+      "generation": "2023 / 2026",
+      "date": "29 DE AGOSTO DE 2026",
+      "city": "Aguascalientes, Ags, México",
+      "bgImage": ""
+    },
+    "message": {
+      "showMessage": true,
+      "message": "Existen logros que transforman nuestra vida para siempre, y compartirlos con las personas que han sido parte de nuestro camino los hace verdaderamente inolvidables. Te invitamos con profunda alegría a acompañarnos en esta gran noche de gala. ¡Nos Graduamos!"
+    },
+    "countdown": {
+      "showCountdown": true,
+      "targetDate": "2026-08-29T21:00:00"
+    },
+    "family": {
+      "showFamily": false
+    },
+    "places": {
+      "showPlaces": true,
+      "locations": [
+        {
+          "title": "Recepción & Evento Principal",
+          "location": "Lago del Marqués, Hacienda Nueva, San Ignacio, 20326 Aguascalientes, Ags.",
+          "time": "21:00 HRS",
+          "date": "2026-08-29",
+          "url": "https://maps.app.goo.gl/8US5GzwX4k664K7J6"
+        }
+      ]
+    },
+    "graduates": {
+      "showGraduates": true
+    },
+    "itinerary": {
+      "showItinerary": true,
+      "itinerary": [
+        {
+          "time": "21:00 HRS",
+          "event": "Recepción de Invitados"
+        },
+        {
+          "time": "21:00 HRS - 22:00 HRS",
+          "event": "Coctél de Bienvenida"
+        },
+        {
+          "time": "22:30 HRS",
+          "event": "Cena (3 tiempos)"
+        },
+        {
+          "time": "23:00 HRS",
+          "event": "Brindis y Pase de Lista para Graduados"
+        },
+        {
+          "time": "23:10 HRS",
+          "event": "Se abre la pista"
+        },
+        {
+          "time": "01:00 HRS",
+          "event": "Música Banda"
+        },
+        {
+          "time": "02:00 HRS",
+          "event": "Fin del Evento"
+        }
+      ]
+    },
+    "dressCode": {
+      "showDressCode": true,
+      "title": "Código de Vestimenta",
+      "description": "Te sugerimos vestir de etiqueta semi-formal.",
+      "attire": {
+        "men": "Traje oscuro y corbata.",
+        "women": "Vestido largo o cocktail."
+      },
+      "colors": {
+        "suggested": [
+          "negro",
+          "azul oscuro"
+        ],
+        "avoid": [
+          "blanco",
+          "beige"
+        ]
+      }
+    },
+    "details": {
+      "showDetails": true
+    },
+    "gallery": {
+      "showGallery": true,
+      "title": "Galería de Fotos",
+      "images": []
+    },
+    "presents": {
+      "showPresents": false,
+      "title": "Mesa de Regalos Liverpool",
+      "url": "https://mesaderegalos.liverpool.com.mx"
+    },
+    "confirmation": {
+      "showConfirmation": false
+    },
+    "rsvp": {
+      "showRsvp": true
+    },
+    "farewell": {
+      "showFarewell": true
+    }
+  }
+}

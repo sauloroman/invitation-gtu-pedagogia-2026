@@ -1,0 +1,56 @@
+@use '../../../common/styles/variables' as vars;
+@use '../../../common/styles/mixins' as mix;
+
+.hero-section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    &__container {
+        width: 80%;
+        margin: 0 auto;
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 5;
+    }
+
+    &__subtitle {
+        font-size: 1.4rem;
+        line-height: 1;
+        font-family: vars.$font-serif;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    &__title {
+        font-family: vars.$font-cursive;
+        font-size: 3.6rem;
+        margin: 2rem;
+        color: vars.$color-text-600;
+        font-weight: 300;
+    }
+
+    &__generation,
+    &__city {
+        font-family: vars.$font-serif;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-bottom: 2rem;
+        display: block;
+    }
+
+}

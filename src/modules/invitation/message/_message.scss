@@ -1,0 +1,13 @@
+@use '../../../common/styles/variables' as vars;
+@use '../../../common/styles/mixins' as mix;
+
+.message-section {
+    padding: 8rem 0;
+    width: 90%;
+    margin: 0 auto;
+
+    &__text {
+        text-align: center;
+        font-family: vars.$font-serif;
+    }
+}
