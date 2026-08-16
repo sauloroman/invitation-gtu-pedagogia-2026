@@ -27,8 +27,8 @@ export const Invitation: React.FC = () => {
             <RsvpSection />
             <PlacesSection />
             <GraduatesSection />
-            <DressCodeSection />
             <ItinerarySection />
+            <DressCodeSection />
             <DetailsSection />
             <GallerySection />
             <FarewellSection />

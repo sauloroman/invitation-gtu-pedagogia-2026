@@ -53,7 +53,7 @@
           "title": "Ceremonia Religiosa",
           "location": "Templo de San Marcos",
           "address": "Monroy 213, Barrio de San Marcos, 20070 Aguascalientes, Ags.",
-          "time": "19:00 HRS",
+          "time": "18:00 HRS",
           "date": "2026-08-29",
           "url": "https://maps.app.goo.gl/SrMSMk2byA2y38Nq6"
         },
@@ -61,7 +61,7 @@
           "title": "Recepción",
           "location": "Salón Lago del Marqués",
           "address": "Hacienda Nueva, San Ignacio, 20326 Aguascalientes, Ags.",
-          "time": "21:00 HRS",
+          "time": "20:00 HRS",
           "date": "2026-08-29",
           "url": "https://maps.app.goo.gl/8US5GzwX4k664K7J6"
         }
@@ -74,15 +74,15 @@
       "showItinerary": true,
       "itinerary": [
         {
-          "time": "21:00 HRS",
+          "time": "20:00 HRS",
           "event": "Recepción de Invitados"
         },
         {
-          "time": "21:00 HRS - 22:00 HRS",
+          "time": "20:00 HRS - 21:00 HRS",
           "event": "Coctél de Bienvenida"
         },
         {
-          "time": "22:30 HRS",
+          "time": "21:00 HRS",
           "event": "Cena (3 tiempos)"
         },
         {

@@ -105,7 +105,6 @@
     border: 1px solid $borderColor;
 }
 
-/// Responsive Media Query Helper
 @mixin respondTo($breakpoint) {
     @if $breakpoint =='xs' or $breakpoint ==420px {
         @media (min-width: 420px) {

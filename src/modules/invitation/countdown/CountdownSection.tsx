@@ -104,7 +104,7 @@ export const CountdownSection: React.FC = () => {
                 >
                     <Button
                         icon={<CalendarBlankIcon size={22} weight="thin" />}
-                        variant="secondary"
+                        variant="primary"
                         onClick={() => downloadSaveTheDate()}
                         className="countdown-section__save-button"
                     >
