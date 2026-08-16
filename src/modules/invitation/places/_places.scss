@@ -2,7 +2,7 @@
 @use '../../../common/styles/mixins' as mix;
 
 .places-section {
-    padding: 6rem 2rem;
+    padding: 8rem 1.5rem 10rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -10,95 +10,196 @@
     position: relative;
     overflow: hidden;
 
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+        opacity: 0.2;
+    }
+
     &__container {
         width: 100%;
         max-width: 960px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 3rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__grid {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
     }
 }
 
-.places-section__grid {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.places-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    max-width: 440px;
+.places-card {
+    position: relative;
+    width: 90%;
     margin: 0 auto;
-    gap: 1rem;
-    padding: 1.5rem 0;
-    margin-bottom: 3.2rem;
+    background-color: vars.$color-secondary-100;
+    box-shadow:
+        0 20px 50px rgba(vars.$color-primary-900, 0.12),
+        0 6px 18px rgba(vars.$color-primary-900, 0.06);
+    text-align: center;
+    overflow: hidden;
+    color: vars.$color-primary-900;
 
-    &__date {
+    &__frame-svg {
+        position: absolute;
+        inset: 0.5rem;
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
+        pointer-events: none;
+        color: vars.$color-primary-400;
+        z-index: 1;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 7rem 0;
+    }
+
+    &__date-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+    }
+
+    &__day {
         font-family: vars.$font-serif;
-        font-size: clamp(1.15rem, 3.5vw, 1.35rem);
+        font-size: 3.8rem;
+        font-weight: 300;
+        color: vars.$color-primary-700;
+        letter-spacing: 0.05em;
+    }
+
+    &__month {
+        font-family: vars.$font-cursive;
+        font-size: 4.2rem;
+        color: vars.$color-tertiary-800;
+        font-weight: normal;
+        margin: -0.9rem 0 -0.6rem;
+    }
+
+    &__year {
+        font-family: vars.$font-serif;
+        font-size: 2.4rem;
         font-weight: 500;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: vars.$color-primary;
-        margin: 0;
+        color: vars.$color-tertiary-900;
+        letter-spacing: 0.08em;
+    }
+
+    &__locations-list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.2rem;
+    }
+
+    &__location-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__divider {
+        width: 65%;
+        height: 1px;
+        background-color: vars.$color-primary-300;
+        opacity: 0.7;
+        margin: 0.4rem 0;
     }
 
     &__time {
         font-family: vars.$font-serif;
-        font-size: clamp(1.2rem, 3vw, 1.4rem);
-        font-weight: 400;
-        letter-spacing: 1px;
+        font-size: 1.8rem;
+        font-weight: 300;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: vars.$color-primary;
+        color: vars.$color-primary-700;
         margin: 0;
+    }
+
+    &__venue-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
     }
 
     &__title {
         font-family: vars.$font-serif;
-        font-size: 1.8rem;
-        font-weight: 700;
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         color: vars.$color-primary-900;
         margin: 0;
-        letter-spacing: 0.02em;
+    }
+
+    &__name {
+        font-family: vars.$font-serif;
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: vars.$color-primary-800;
+        letter-spacing: 0.05em;
+        margin: 1rem 0;
     }
 
     &__address {
-        font-family: vars.$font-serif;
-        font-size: clamp(1.15rem, 3.8vw, 1.25rem);
-        font-weight: 300;
-        line-height: 1.7;
-        color: vars.$color-text-700;
-        letter-spacing: 0.5px;
+        font-family: vars.$font-sans;
+        font-size: 1.2rem;
+        color: vars.$color-primary-700;
+        line-height: 1.45;
+        max-width: 20rem;
         margin: 0;
-        width: 90%;
     }
 
     &__button {
-        font-family: vars.$font-sans;
-        font-size: clamp(0.75rem, 2.2vw, 0.85rem);
-        font-weight: 600;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        padding: 0.9rem 2.5rem;
-        background-color: transparent;
-        border: 1px solid vars.$color-primary-400;
-        color: vars.$color-primary;
-        border-radius: 30px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 1.2rem;
+        margin-top: 0.3rem;
+        width: 100%;
+        max-width: 25rem;
+        color: vars.$color-primary-900 !important;
+        border-color: vars.$color-primary-500 !important;
+        border-radius: 100px !important;
 
         &:hover {
-            background-color: vars.$color-primary;
-            border-color: vars.$color-primary;
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(vars.$color-primary, 0.2);
+            background-color: vars.$color-primary-900 !important;
+            border-color: vars.$color-primary-900 !important;
+            color: #ffffff !important;
+        }
+    }
+
+    &__location {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            mix-blend-mode: multiply;
+            opacity: .85;
+            width: 30rem;
         }
     }
 }

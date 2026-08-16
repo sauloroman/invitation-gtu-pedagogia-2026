@@ -50,8 +50,17 @@
       "showPlaces": true,
       "locations": [
         {
-          "title": "Recepción & Evento Principal",
-          "location": "Lago del Marqués, Hacienda Nueva, San Ignacio, 20326 Aguascalientes, Ags.",
+          "title": "Ceremonia Religiosa",
+          "location": "Templo de San Marcos",
+          "address": "Monroy 213, Barrio de San Marcos, 20070 Aguascalientes, Ags.",
+          "time": "19:00 HRS",
+          "date": "2026-08-29",
+          "url": "https://maps.app.goo.gl/SrMSMk2byA2y38Nq6"
+        },
+        {
+          "title": "Recepción",
+          "location": "Salón Lago del Marqués",
+          "address": "Hacienda Nueva, San Ignacio, 20326 Aguascalientes, Ags.",
           "time": "21:00 HRS",
           "date": "2026-08-29",
           "url": "https://maps.app.goo.gl/8US5GzwX4k664K7J6"

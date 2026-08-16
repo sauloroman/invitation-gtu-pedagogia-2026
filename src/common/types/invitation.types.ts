@@ -31,6 +31,7 @@ export interface SectionItemConfig {
 export interface LocationItem {
     title?: string
     location?: string
+    address?: string
     time?: string
     date?: string
     url?: string
