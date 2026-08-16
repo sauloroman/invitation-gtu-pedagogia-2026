@@ -1,10 +1,6 @@
 @use './variables' as *;
+@use './mixins' as mix;
 
-/* ==========================================================================
-   Font Imports (@font-face)
-   ========================================================================== */
-
-/* Pack 1 */
 @font-face {
     font-family: 'Alex Brush';
     src: url('../../assets/fonts/pack-1/AlexBrushFont.ttf') format('truetype');
@@ -29,7 +25,6 @@
     font-display: swap;
 }
 
-/* Pack 2 */
 @font-face {
     font-family: 'Pinyon Script';
     src: url('../../assets/fonts/pack-2/PinyonScriptFont.ttf') format('truetype');
@@ -79,7 +74,6 @@
     font-display: swap;
 }
 
-/* Pack 4 */
 @font-face {
     font-family: 'Amsterdam Signature';
     src: url('../../assets/fonts/pack-4/AmsterdamSignatureFont.ttf') format('truetype');
@@ -129,16 +123,16 @@
     font-display: swap;
 }
 
-/* ==========================================================================
-   Typography Base Styles
-   ========================================================================== */
-
 html {
-    font-size: 62.5%;
+    font-size: 50%;
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
+
+    @include mix.respondTo('xs') {
+        font-size: 56.5%;
+    }
 }
 
 body {
@@ -206,15 +200,10 @@ select {
     letter-spacing: inherit;
 }
 
-/* ==========================================================================
-   Typography Helpers
-   ========================================================================== */
-
 .text-center {
     text-align: center;
 }
 
-/* Active Theme Font Helpers */
 .font-cursive {
     font-family: $font-cursive;
 }

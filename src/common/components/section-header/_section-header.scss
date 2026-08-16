@@ -48,16 +48,7 @@
         color: vars.$color-primary-600;
         line-height: 1.1;
         margin: 0 0 0.4rem 0;
-
-        &--uppercase {
-            font-family: vars.$font-sans;
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: vars.$color-primary-700;
-            margin-bottom: 0.8rem;
-        }
+        margin-bottom: 1rem;
     }
 
     &__title {
@@ -68,6 +59,8 @@
         color: vars.$color-primary-900;
         line-height: 1.2;
         margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     &__subtitle {

@@ -20,6 +20,7 @@
     position: relative;
     overflow: hidden;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    text-transform: uppercase !important;
 
     &:focus-visible {
         outline: 2px solid vars.$color-primary;
@@ -61,7 +62,7 @@
     &--outline {
         background-color: transparent;
         border-color: vars.$color-primary;
-        color: vars.$color-primary;
+        color: vars.$color-tertiary-900;
 
         &:hover:not(:disabled) {
             background-color: vars.$color-primary;

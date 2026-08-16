@@ -10,7 +10,7 @@ interface InitialState {
 const initialState: InitialState = {
     ticket: {
         id: "",
-        name: "",
+        name: "Saulo Román Santillán Nava",
         adultsQuantity: 0,
         adultsCounter: 0,
         kidsQuantity: 0,
