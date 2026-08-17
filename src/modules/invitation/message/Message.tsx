@@ -36,10 +36,10 @@ export const MessageSection: React.FC = () => {
 
                 <motion.div
                     className="message-section__container"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: '-10% 0px' }}
-                    transition={{ duration: 1.2, delay: 0.2, ease: PEACEFUL_EASE }}
+                    transition={{ duration: 1.1, delay: 0.2, ease: PEACEFUL_EASE }}
                 >
                     <motion.div
                         className="message-section__sello"
