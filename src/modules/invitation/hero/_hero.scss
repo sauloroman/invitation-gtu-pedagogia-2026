@@ -14,6 +14,17 @@
         min-height: 85vh;
         object-fit: cover;
         z-index: 0;
+        pointer-events: none;
+
+        &::-webkit-media-controls,
+        &::-webkit-media-controls-start-playback-button,
+        &::-webkit-media-controls-play-button,
+        &::-webkit-media-controls-panel {
+            display: none !important;
+            -webkit-appearance: none !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
     }
 
     &__container {

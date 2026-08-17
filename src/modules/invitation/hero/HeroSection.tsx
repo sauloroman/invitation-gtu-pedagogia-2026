@@ -8,12 +8,39 @@ export const HeroSection: React.FC = () => {
     const heroConfig = sections.hero
 
     useEffect(() => {
-        if (videoRef.current) {
-            videoRef.current.muted = true
-            videoRef.current.defaultMuted = true
-            videoRef.current.setAttribute('playsinline', 'true')
-            videoRef.current.setAttribute('webkit-playsinline', 'true')
-            videoRef.current.play().catch((err) => { console.log('Hero video autoplay blocked or failed:', err) })
+        const videoEl = videoRef.current
+        if (!videoEl) return
+
+        videoEl.muted = true
+        videoEl.defaultMuted = true
+        videoEl.setAttribute('playsinline', 'true')
+        videoEl.setAttribute('webkit-playsinline', 'true')
+
+        const playVideo = () => {
+            if (videoEl.paused) {
+                videoEl.play().catch((err) => {
+                    console.log('Hero video autoplay wait for interaction:', err)
+                })
+            }
+        }
+
+        playVideo()
+
+        const handleInteraction = () => {
+            playVideo()
+            window.removeEventListener('touchstart', handleInteraction)
+            window.removeEventListener('scroll', handleInteraction)
+            window.removeEventListener('click', handleInteraction)
+        }
+
+        window.addEventListener('touchstart', handleInteraction, { passive: true })
+        window.addEventListener('scroll', handleInteraction, { passive: true })
+        window.addEventListener('click', handleInteraction, { passive: true })
+
+        return () => {
+            window.removeEventListener('touchstart', handleInteraction)
+            window.removeEventListener('scroll', handleInteraction)
+            window.removeEventListener('click', handleInteraction)
         }
     }, [])
 
@@ -31,7 +58,7 @@ export const HeroSection: React.FC = () => {
                 loop
                 muted
                 playsInline
-                {...{ 'webkit-playsinline': 'true' }}
+                {...{ 'webkit-playsinline': 'true', 'x5-video-player-type': 'h5', 'x5-playsinline': 'true' }}
                 controls={false}
                 disablePictureInPicture
                 disableRemotePlayback
