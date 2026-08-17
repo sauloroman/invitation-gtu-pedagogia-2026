@@ -1,5 +1,19 @@
 @use './variables' as vars;
 
+:root,
+html,
+body {
+    color-scheme: light !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root,
+    html,
+    body {
+        color-scheme: light !important;
+    }
+}
+
 *,
 *::before,
 *::after {

@@ -46,7 +46,7 @@ export const Ticket: React.FC = () => {
                         <div className="ticket__dashed-line" />
                     </div>
 
-                    <TicketNotice />
+                    <TicketNotice ticket={ticket} />
 
                     <div className="ticket__divider">
                         <div className="ticket__dashed-line" />

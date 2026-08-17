@@ -1,11 +1,15 @@
 import React from 'react'
 import { TicketIcon, DownloadSimpleIcon, InfoIcon } from '@phosphor-icons/react'
 import { Button } from '@/common/components/button/Button'
+import { useTicket } from '@/common/hooks'
+import type { Ticket } from '@/common/types/ticket.types'
 
-export const TicketNotice: React.FC = () => {
-    const handleDownloadPdf = () => {
-        window.print()
-    }
+interface Props {
+    ticket?: Ticket | null
+}
+
+export const TicketNotice: React.FC<Props> = ({ ticket }) => {
+    const { onDownloadPdf, isGeneratingPdf } = useTicket()
 
     return (
         <div className="ticket__notice-container">
@@ -26,11 +30,12 @@ export const TicketNotice: React.FC = () => {
             <div className="ticket__download-box no-print">
                 <Button
                     variant="outline"
-                    onClick={handleDownloadPdf}
+                    onClick={() => onDownloadPdf(ticket)}
+                    isLoading={isGeneratingPdf}
                     icon={<DownloadSimpleIcon size={24} weight="bold" />}
                     className="ticket__download-btn"
                 >
-                    Descargar Boleto PDF
+                    {isGeneratingPdf ? 'Generando PDF...' : 'Descargar Boleto PDF'}
                 </Button>
             </div>
         </div>
