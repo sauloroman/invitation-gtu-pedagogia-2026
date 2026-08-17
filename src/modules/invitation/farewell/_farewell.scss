@@ -2,37 +2,118 @@
 @use '../../../common/styles/mixins' as mix;
 
 .farewell {
-    padding: 4rem 1.5rem;
+    padding: 10rem 2rem 5rem;
     position: relative;
-    width: 100%;
+    overflow: hidden;
+    background-color: vars.$color-primary-100;
     display: flex;
     justify-content: center;
     align-items: center;
 
+    &__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+        opacity: .25;
+    }
+
     &__container {
         position: relative;
+        z-index: 1;
         width: 100%;
-        max-width: 600px;
+        max-width: 700px;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 1rem;
-        box-sizing: border-box;
+        gap: 6rem;
+    }
+
+    &__message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
     }
 
     &__title {
-        font-family: vars.$font-serif;
-        font-size: 2.2rem;
+        font-family: vars.$font-cursive;
+        font-size: 3.8rem;
+        font-weight: 400;
         color: vars.$color-primary-900;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    &__text {
+        font-family: vars.$font-serif;
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: vars.$color-primary-800;
+        margin: 0;
+        max-width: 520px;
+        line-height: 1.65;
+    }
+
+    &__icon {
+        margin-top: -2rem;
+        margin-bottom: -7rem;
+        width: 30rem;
+        height: 30rem;
+        object-fit: contain;
+        pointer-events: none;
+        filter: brightness(1.22) contrast(1.05);
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid rgba(vars.$color-primary-900, 0.15);
+        width: 100%;
+    }
+
+    &__made-by {
+        font-family: vars.$font-serif;
+        font-size: 1.1rem;
+        color: vars.$color-primary-800;
         margin: 0;
     }
 
-    &__date {
-        font-family: vars.$font-sans;
+    &__link {
+        color: vars.$color-primary-900;
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: vars.$color-primary-700;
+        }
+    }
+
+    &__contact {
+        font-family: vars.$font-serif;
         font-size: 1rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: vars.$color-4;
+        color: vars.$color-primary-700;
+        margin: 0;
+    }
+
+    &__phone {
+        color: vars.$color-primary-900;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            text-decoration: underline;
+            color: vars.$color-primary-700;
+        }
     }
 }

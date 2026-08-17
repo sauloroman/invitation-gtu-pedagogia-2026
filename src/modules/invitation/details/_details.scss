@@ -50,12 +50,12 @@
     background-origin: border-box;
     background-clip: padding-box, border-box;
     box-shadow: 0 8px 24px rgba(vars.$color-primary-900, 0.08);
-    padding: 3.8rem 2.8rem;
+    padding: 3.2rem 2.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1.2rem;
+    gap: 1rem;
     border-radius: 0 !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-image 0.3s ease;
 
@@ -65,13 +65,13 @@
         background-image: linear-gradient(#ffffff, #ffffff), linear-gradient(135deg, #FFF0BA 0%, #C5A059 50%, #6E4F18 100%);
 
         .details-card__icon {
-            transform: scale(1.06);
+            transform: scale(1.08);
         }
     }
 
     &__icon {
-        width: 6.5rem;
-        height: 6.5rem;
+        width: 8rem;
+        height: 8rem;
         object-fit: contain;
         margin-bottom: 0.2rem;
         transition: transform 0.3s ease;
