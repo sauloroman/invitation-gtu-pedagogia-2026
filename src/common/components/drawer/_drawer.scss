@@ -50,7 +50,6 @@
     overflow-y: auto;
     background-color: vars.$color-primary-100;
     border: 5px solid transparent;
-    background-image: linear-gradient(vars.$color-primary-100, vars.$color-primary-100), linear-gradient(135deg, #E6C875 0%, #C5A059 50%, #8C6A2E 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
 
@@ -77,8 +76,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        @include mix.line(10rem, vars.$color-primary-400);
 
         img {
             width: 10rem;
@@ -127,6 +124,10 @@
         font-size: 2rem;
         font-weight: 300;
         text-transform: uppercase;
+    }
+
+    &__text {
+        font-family: vars.$font-serif;
     }
 
     &__date {

@@ -29,6 +29,7 @@ export const GraduatesDrawer: React.FC = () => {
                     <img src={logo} alt="GTU light logo" />
                 </div>
                 <p className="drawer-career-card__name">Licenciatura en Pedagogía</p>
+                <p className="drawer-career-card__text">Con orgullo y satisfacción, la generación 2023-2026 presenta a sus egresados</p>
             </div>
 
             <div className="graduates-drawer__body">
