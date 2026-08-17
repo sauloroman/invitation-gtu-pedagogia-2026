@@ -37,7 +37,7 @@ export const Drawer: React.FC<Props> = ({ children }) => {
                             onClick={onCloseDrawer}
                             aria-label="Cerrar"
                         >
-                            <XIcon size={20} weight="bold" />
+                            <XIcon size={25} weight="bold" />
                         </button>
                         <div className="drawer-body">
                             {children}

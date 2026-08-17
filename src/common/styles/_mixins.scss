@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use './variables' as vars;
 
 /* ==========================================================================
    Functions - Dynamic Color Tints & Shades
@@ -163,4 +164,11 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+}
+
+@mixin line($height: 10) {
+    width: 2px;
+    height: $height;
+    background-color: vars.$color-primary;
+    margin: 0 auto;
 }

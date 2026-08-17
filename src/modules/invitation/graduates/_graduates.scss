@@ -2,7 +2,7 @@
 @use '../../../common/styles/mixins' as mix;
 
 .graduates {
-    padding: 18rem 1.5rem 9rem;
+    padding: 20rem 1.5rem 9rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -44,11 +44,18 @@
 
     &__bulbs {
         position: absolute;
-        top: 0;
+        top: 2rem;
         left: 0;
+        right: 0;
+        width: 100%;
+        pointer-events: none;
+        z-index: 1;
 
         img {
             width: 100%;
+            min-width: 100%;
+            height: auto;
+            display: block;
         }
     }
 

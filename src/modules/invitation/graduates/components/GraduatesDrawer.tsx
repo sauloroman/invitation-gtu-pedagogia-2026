@@ -3,6 +3,8 @@ import { Drawer } from '@/common/components/drawer/Drawer';
 import { Accordion } from '@/common/components/accordion/Accordion';
 import { useGraduates } from '@/common/hooks';
 
+import logo from '@/assets/images/icons/logo-light.svg'
+
 export const GraduatesDrawer: React.FC = () => {
     const { careers } = useGraduates();
 
@@ -23,7 +25,10 @@ export const GraduatesDrawer: React.FC = () => {
     return (
         <Drawer>
             <div className="drawer-career-card">
-                <p className="drawer-career-card__name">Lista de Participantes</p>
+                <div className="drawer-career-card__logo">
+                    <img src={logo} alt="GTU light logo" />
+                </div>
+                <p className="drawer-career-card__name">Licenciatura en Pedagogía</p>
             </div>
 
             <div className="graduates-drawer__body">
