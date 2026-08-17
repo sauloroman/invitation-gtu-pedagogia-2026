@@ -1,11 +1,8 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import { useInvitationConfig } from '@/common/hooks'
 
 import envelop from '@/assets/images/icons/envelop.svg'
 import sello from '@/assets/images/icons/sello.svg'
-
-const PEACEFUL_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 export const MessageSection: React.FC = () => {
     const { sections } = useInvitationConfig()
@@ -24,109 +21,48 @@ export const MessageSection: React.FC = () => {
     return (
         <section id="message" className="message-section">
             <div className="message-section__main">
-                <motion.div
-                    className="message-section__envelop"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true, margin: '-10% 0px' }}
-                    transition={{ duration: 1.2, ease: PEACEFUL_EASE }}
-                >
+                <div className="message-section__envelop">
                     <img src={envelop} alt="Envelop Image" />
-                </motion.div>
+                </div>
 
-                <motion.div
-                    className="message-section__container"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: '-10% 0px' }}
-                    transition={{ duration: 1.1, delay: 0.2, ease: PEACEFUL_EASE }}
-                >
-                    <motion.div
-                        className="message-section__sello"
-                        initial={{ opacity: 0, scale: 0.7 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true, margin: '-10% 0px' }}
-                        transition={{ duration: 1.0, delay: 0.5, ease: PEACEFUL_EASE }}
-                    >
+                <div className="message-section__container">
+                    <div className="message-section__sello">
                         <img src={sello} alt="Sello" />
-                    </motion.div>
+                    </div>
 
                     <div className="message-section__content">
-                        <motion.div
-                            className="message-card__monogram"
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: '-10% 0px' }}
-                            transition={{ duration: 0.9, delay: 0.35, ease: PEACEFUL_EASE }}
-                        >
+                        <div className="message-card__monogram">
                             <span>GTU</span>
-                        </motion.div>
+                        </div>
 
                         {messageText && (
-                            <motion.p
-                                className="message-card__quote"
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: '-10% 0px' }}
-                                transition={{ duration: 0.9, delay: 0.5, ease: PEACEFUL_EASE }}
-                            >
+                            <p className="message-card__quote">
                                 "{messageText}"
-                            </motion.p>
+                            </p>
                         )}
 
-                        <motion.p
-                            className="message-card__intro"
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: '-10% 0px' }}
-                            transition={{ duration: 0.9, delay: 0.65, ease: PEACEFUL_EASE }}
-                        >
+                        <p className="message-card__intro">
                             Celebra con nosotros
-                        </motion.p>
+                        </p>
 
-                        <motion.p
-                            className="message-card__school"
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: '-10% 0px' }}
-                            transition={{ duration: 0.9, delay: 0.8, ease: PEACEFUL_EASE }}
-                        >
+                        <p className="message-card__school">
                             {school}
-                        </motion.p>
+                        </p>
 
-                        <motion.h2
-                            className="message-card__title"
-                            initial={{ opacity: 0, y: 12 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: '-10% 0px' }}
-                            transition={{ duration: 1.0, delay: 0.95, ease: PEACEFUL_EASE }}
-                        >
+                        <h2 className="message-card__title">
                             {career}
-                        </motion.h2>
+                        </h2>
 
-                        <motion.p
-                            className="message-card__invitation"
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: '-10% 0px' }}
-                            transition={{ duration: 0.9, delay: 1.1, ease: PEACEFUL_EASE }}
-                        >
+                        <p className="message-card__invitation">
                             Te invitamos a celebrar nuestra gran noche
-                        </motion.p>
+                        </p>
 
-                        <motion.div
-                            className="message-card__location"
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: '-10% 0px' }}
-                            transition={{ duration: 0.9, delay: 1.25, ease: PEACEFUL_EASE }}
-                        >
+                        <div className="message-card__location">
                             {city}
-                        </motion.div>
+                        </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     )
 }
-
