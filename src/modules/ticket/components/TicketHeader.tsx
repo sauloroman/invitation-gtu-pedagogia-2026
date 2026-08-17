@@ -7,25 +7,25 @@ export const TicketHeader: React.FC = () => {
     const heroConfig = sections.hero
     const placesConfig = sections.places
 
-    const title = heroConfig?.names || heroConfig?.title || ''
-    const subtitle = heroConfig?.subtitle || ''
     const date = heroConfig?.date ? `${heroConfig.date}` : ''
 
-    const mainLocation = placesConfig?.locations?.[0]
+    const mainLocation = placesConfig?.locations?.[1]
     const placeTitle = mainLocation?.title || ''
     const placeAddress = mainLocation?.location || ''
 
     return (
         <header className="ticket__header">
             <div className="ticket__event-title">
-                {subtitle && <span className="ticket__event-subtitle">{subtitle}</span>}
-                {title && <h2 className="ticket__couple-names">{title}</h2>}
+                <span className="ticket__event-subtitle">GTU PEDAGOGÍA 2026</span>
+                <h2 className="ticket__couple-names">Graduación</h2>
             </div>
 
             <div className="ticket__event-details">
                 {date && (
                     <div className="ticket__detail-item">
-                        <CalendarBlankIcon className="ticket__detail-icon" size={24} weight="thin" />
+                        <div className="ticket__detail-icon">
+                            <CalendarBlankIcon size={24} weight="thin" />
+                        </div>
                         <div className="ticket__detail-text">
                             <span className="ticket__detail-label">Fecha</span>
                             <span className="ticket__detail-value">{date}</span>
@@ -35,7 +35,9 @@ export const TicketHeader: React.FC = () => {
 
                 {(placeTitle || placeAddress) && (
                     <div className="ticket__detail-item">
-                        <MapPinIcon className="ticket__detail-icon" size={24} weight="thin" />
+                        <div className="ticket__detail-icon">
+                            <MapPinIcon size={24} weight="thin" />
+                        </div>
                         <div className="ticket__detail-text">
                             <span className="ticket__detail-label">Lugar</span>
                             {placeTitle && <span className="ticket__detail-value">{placeTitle}</span>}
