@@ -78,7 +78,7 @@
         justify-content: center;
         align-items: center;
 
-        @include mix.line();
+        @include mix.line(10rem, vars.$color-primary-400);
 
         img {
             width: 10rem;

@@ -9,7 +9,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: vars.$color-1;
+    background-color: vars.$color-primary-100;
+    border: 5px solid transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     padding: 3rem 1.5rem;
     box-sizing: border-box;
 
@@ -30,16 +33,23 @@
     text-align: center;
     margin-bottom: 2rem;
 
+    &__pretitle {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        font-family: vars.$font-serif;
+    }
+
     &__title {
         font-family: vars.$font-serif;
-        color: #ffffff;
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
     }
 }
 
 .search-form {
-    width: 100%;
+    width: 90%;
 
     &__field {
         display: flex;
@@ -48,31 +58,27 @@
     }
 
     &__label {
-        color: #ffffff;
-        text-align: center;
-        font-family: vars.$font-sans;
+        text-align: left;
+        font-family: vars.$font-serif;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
     }
 
     &__input {
-        padding: 0.8rem 1.2rem;
+        padding: 1rem;
         border-radius: 30px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
         background-color: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
+        border: 1px solid vars.$color-primary-600;
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.6rem;
         outline: none;
         font-family: vars.$font-sans;
-
-        &:focus {
-            border-color: vars.$color-4;
-        }
     }
 
     &__error {
         color: #ff6b6b;
-        font-size: 0.9rem;
-        text-align: center;
+        font-size: 1.2rem;
+        text-align: right;
         font-family: vars.$font-sans;
     }
 }
@@ -80,7 +86,7 @@
 .search-modal {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 3.2rem;
     padding: 1rem;
 
     &__item {
@@ -102,11 +108,10 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.35);
     background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid currentColor;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    color: rgba(255, 255, 255, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,8 +121,6 @@
 
     &:hover {
         background-color: rgba(255, 255, 255, 0.18);
-        border-color: #ffffff;
-        color: #ffffff;
         transform: scale(1.05);
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     }
@@ -136,7 +139,17 @@
         font-size: 1.2rem;
         letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: rgba(vars.$color-4, 0.75);
         margin: 0;
+    }
+}
+
+.search-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    img {
+        width: 13rem;
     }
 }

@@ -1,5 +1,4 @@
 @use 'sass:color';
-@use './variables' as vars;
 
 /* ==========================================================================
    Functions - Dynamic Color Tints & Shades
@@ -166,9 +165,9 @@
     }
 }
 
-@mixin line($height: 10) {
+@mixin line($height: 10rem, $color: currentColor) {
     width: 2px;
     height: $height;
-    background-color: vars.$color-primary;
+    background-color: $color;
     margin: 0 auto;
 }

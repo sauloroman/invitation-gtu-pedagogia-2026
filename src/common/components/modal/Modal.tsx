@@ -26,7 +26,7 @@ export const Modal: React.FC<Props> = ({ children, size = 'md', glass = false })
                     <Button
                         variant="icon"
                         onClick={onCloseModal}
-                        icon={<XIcon size={20} />}
+                        icon={<XIcon size={30} />}
                         aria-label="Cerrar modal"
                     />
                 </header>
