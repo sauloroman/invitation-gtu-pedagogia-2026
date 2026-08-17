@@ -1,1 +1,149 @@
-.itinerary {}
+@use '../../../common/styles/variables' as vars;
+@use '../../../common/styles/mixins' as mix;
+
+.itinerary-section {
+    padding: 7rem 1.2rem 9rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    &__header {
+        margin-bottom: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__description {
+        font-family: vars.$font-serif;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        color: vars.$color-primary-800;
+        text-align: center;
+        max-width: 28rem;
+        margin: 1.2rem auto 2rem;
+        font-weight: 300;
+    }
+
+    &__container {
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3.5rem;
+    }
+
+    &__timeline {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.itinerary-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+    &--left {
+        justify-content: flex-start;
+    }
+
+    &--right {
+        justify-content: flex-end;
+    }
+
+    &__card {
+        position: relative;
+        width: 84%;
+        max-width: 18rem;
+        padding: 2rem 1.4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.7rem;
+        border-radius: 0 !important;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        margin-top: -10rem;
+    }
+
+    &__icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.2rem;
+    }
+
+    &__icon-placeholder {
+        width: 10rem;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 !important;
+    }
+
+    &__icon-img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    &__icon-ph {
+        color: vars.$color-primary-900;
+    }
+
+    &__time {
+        font-family: vars.$font-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: vars.$color-primary-700;
+    }
+
+    &__title {
+        font-family: vars.$font-serif;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin: 0;
+        line-height: 1.35;
+    }
+}
+
+.itinerary-connector {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin-top: -3.5rem;
+    margin-bottom: -1.5rem;
+    z-index: 2;
+    pointer-events: none;
+
+    &--right {
+        justify-content: center;
+        padding-left: 2rem;
+    }
+
+    &--left {
+        justify-content: center;
+        padding-right: 2rem;
+    }
+
+    &__arrow {
+        width: 4.5rem;
+        height: 4.5rem;
+        object-fit: contain;
+        display: block;
+        opacity: 0.95;
+    }
+}
