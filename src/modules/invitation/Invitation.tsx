@@ -9,7 +9,6 @@ import { GraduatesSection } from './graduates/GraduatesSection'
 import { DressCodeSection } from './dress-code/DressCodeSection'
 import { ItinerarySection } from './itinerary/ItinerarySection'
 import { DetailsSection } from './details/DetailsSection'
-import { GallerySection } from './gallery/GallerySection'
 import { FarewellSection } from './farewell/FarewellSection'
 import { RsvpSection } from './rsvp/RsvpSection'
 
@@ -30,7 +29,6 @@ export const Invitation: React.FC = () => {
             <ItinerarySection />
             <DressCodeSection />
             <DetailsSection />
-            <GallerySection />
             <FarewellSection />
         </main>
     )

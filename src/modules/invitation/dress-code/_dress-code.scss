@@ -169,4 +169,14 @@
             background-color: vars.$color-primary-900;
         }
     }
+
+    &__decoration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 8rem;
+        }
+    }
 }

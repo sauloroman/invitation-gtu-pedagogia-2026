@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { useInvitationConfig } from '@/common/hooks'
 import { SectionHeader } from '@/common/components/section-header/SectionHeader'
 
+import decoration from '@/assets/images/icons/cilindros.svg'
+
 const FLUID_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 export const DressCodeSection: React.FC = () => {
@@ -19,6 +21,11 @@ export const DressCodeSection: React.FC = () => {
     return (
         <section id="dress-code" className="dress-code-section">
             <div className="dress-code-section__container">
+
+                <div className="dress-code-section__decoration">
+                    <img src={decoration} alt="Decoration Dress Code" />
+                </div>
+
                 <motion.div
                     className="dress-code-section__header-wrapper"
                     initial={{ opacity: 0, y: -20 }}
@@ -62,7 +69,6 @@ export const DressCodeSection: React.FC = () => {
                     </div>
                 </motion.div>
 
-                {/* Nota indicando libre elección de color */}
                 <motion.div
                     className="dress-code-section__note"
                     initial={{ opacity: 0, y: 15 }}
@@ -76,7 +82,6 @@ export const DressCodeSection: React.FC = () => {
                     </p>
                 </motion.div>
 
-                {/* Muestrario de paleta de colores en arcos */}
                 <motion.div
                     className="dress-code-section__palette"
                     initial={{ opacity: 0, scale: 0.95 }}
