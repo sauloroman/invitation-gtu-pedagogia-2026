@@ -13,34 +13,41 @@ export const HeroSection: React.FC = () => {
 
         videoEl.muted = true
         videoEl.defaultMuted = true
-        videoEl.setAttribute('playsinline', 'true')
-        videoEl.setAttribute('webkit-playsinline', 'true')
+        videoEl.setAttribute('muted', '')
+        videoEl.setAttribute('playsinline', '')
+        videoEl.setAttribute('webkit-playsinline', '')
+        videoEl.setAttribute('x5-playsinline', '')
+        videoEl.setAttribute('x5-video-player-type', 'h5')
 
-        const playVideo = () => {
+        const tryPlay = () => {
             if (videoEl.paused) {
-                videoEl.play().catch((err) => {
-                    console.log('Hero video autoplay wait for interaction:', err)
-                })
+                const promise = videoEl.play()
+                if (promise !== undefined) {
+                    promise.catch(() => {})
+                }
             }
         }
 
-        playVideo()
+        tryPlay()
 
-        const handleInteraction = () => {
-            playVideo()
-            window.removeEventListener('touchstart', handleInteraction)
-            window.removeEventListener('scroll', handleInteraction)
-            window.removeEventListener('click', handleInteraction)
+        const handleTouchOrScroll = () => {
+            tryPlay()
+            window.removeEventListener('touchstart', handleTouchOrScroll)
+            window.removeEventListener('scroll', handleTouchOrScroll)
+            window.removeEventListener('click', handleTouchOrScroll)
+            window.removeEventListener('touchend', handleTouchOrScroll)
         }
 
-        window.addEventListener('touchstart', handleInteraction, { passive: true })
-        window.addEventListener('scroll', handleInteraction, { passive: true })
-        window.addEventListener('click', handleInteraction, { passive: true })
+        window.addEventListener('touchstart', handleTouchOrScroll, { passive: true })
+        window.addEventListener('scroll', handleTouchOrScroll, { passive: true })
+        window.addEventListener('click', handleTouchOrScroll, { passive: true })
+        window.addEventListener('touchend', handleTouchOrScroll, { passive: true })
 
         return () => {
-            window.removeEventListener('touchstart', handleInteraction)
-            window.removeEventListener('scroll', handleInteraction)
-            window.removeEventListener('click', handleInteraction)
+            window.removeEventListener('touchstart', handleTouchOrScroll)
+            window.removeEventListener('scroll', handleTouchOrScroll)
+            window.removeEventListener('click', handleTouchOrScroll)
+            window.removeEventListener('touchend', handleTouchOrScroll)
         }
     }, [])
 
@@ -54,20 +61,24 @@ export const HeroSection: React.FC = () => {
         <section id="hero" className="hero-section">
             <video
                 ref={videoRef}
+                src={video}
                 autoPlay
                 loop
                 muted
                 playsInline
-                {...{ 'webkit-playsinline': 'true', 'x5-video-player-type': 'h5', 'x5-playsinline': 'true' }}
                 controls={false}
                 disablePictureInPicture
                 disableRemotePlayback
                 preload="auto"
                 className="hero-section__video"
                 style={{ pointerEvents: 'none' }}
-            >
-                <source src={video} type="video/mp4" />
-            </video>
+                {...{
+                    'playsinline': 'true',
+                    'webkit-playsinline': 'true',
+                    'x5-video-player-type': 'h5',
+                    'x5-playsinline': 'true'
+                }}
+            />
             <div className="hero-section__container">
                 {eventCareer && <h1 className="hero-section__title">{eventCareer}</h1>}
 
@@ -79,4 +90,3 @@ export const HeroSection: React.FC = () => {
         </section>
     )
 }
-

@@ -2,6 +2,8 @@ import React from 'react'
 import { Modal } from '@/common/components/modal/Modal'
 import { useTicket } from '@/common/hooks/useTicket'
 
+import croquis from '@/assets/images/icons/croquis.jpeg'
+
 export const TicketTablesModal: React.FC = () => {
     const { ticket } = useTicket()
     const tableInfo = ticket?.table || 'No asignada'
@@ -10,9 +12,9 @@ export const TicketTablesModal: React.FC = () => {
     return (
         <Modal size="lg">
             <div className="ticket__tables-modal">
-                <p className="ticket__tables-modal__title">
-                    Distribución de Mesas del Evento
-                </p>
+                <div className="ticket__tables-modal__img">
+                    <img src={croquis} alt="Croquis" />
+                </div>
 
                 {ticket && (
                     <div className="ticket__table-card ticket__tables-modal__card">
