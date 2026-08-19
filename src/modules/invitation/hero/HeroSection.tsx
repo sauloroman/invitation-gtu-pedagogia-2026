@@ -73,7 +73,6 @@ export const HeroSection: React.FC = () => {
                 className="hero-section__video"
                 style={{ pointerEvents: 'none' }}
                 {...{
-                    'playsinline': 'true',
                     'webkit-playsinline': 'true',
                     'x5-video-player-type': 'h5',
                     'x5-playsinline': 'true'

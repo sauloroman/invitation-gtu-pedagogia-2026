@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { useInvitationConfig, useGraduates, useDrawer, useMusicPlayer } from '@/common/hooks'
+import { useInvitationConfig, useDrawer, useMusicPlayer } from '@/common/hooks'
 import { DRAWER_NAMES } from '@/store/ui/drawer.slice'
 import { Button } from '@/common/components/button/Button'
 import { SectionHeader } from '@/common/components/section-header/SectionHeader'
@@ -12,7 +12,6 @@ const FLUID_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number]
 
 export const GraduatesSection: React.FC = () => {
     const { sections } = useInvitationConfig()
-    const { careers } = useGraduates()
     const { onOpenDrawer } = useDrawer()
     const { isPlaying, onToggleMusic } = useMusicPlayer()
 
@@ -21,7 +20,7 @@ export const GraduatesSection: React.FC = () => {
     const career = typeof hero?.career === 'string' ? hero.career : 'Licenciatura en Pedagogía'
     const generation = typeof hero?.generation === 'string' ? hero.generation : 'Generación 2023 - 2026'
 
-    const primaryCareerName = careers?.[0]?.name || career
+    const primaryCareerName = career
 
     return (
         <section id="graduates" className="graduates">

@@ -1,26 +1,11 @@
 import React from 'react';
 import { Drawer } from '@/common/components/drawer/Drawer';
-import { Accordion } from '@/common/components/accordion/Accordion';
 import { useGraduates } from '@/common/hooks';
 
-import logo from '@/assets/images/icons/logo-light.svg'
+import logo from '@/assets/images/icons/logo-light.svg';
 
 export const GraduatesDrawer: React.FC = () => {
-    const { careers } = useGraduates();
-
-    const accordionItems = careers.map((career) => ({
-        id: career.id,
-        title: career.name,
-        content: (
-            <ul className="graduates-drawer__list">
-                {career.graduates?.map((grad) => (
-                    <li key={grad.id} className="graduates-drawer__item">
-                        {grad.name}
-                    </li>
-                ))}
-            </ul>
-        )
-    }));
+    const { tickets, isLoading } = useGraduates();
 
     return (
         <Drawer>
@@ -32,9 +17,17 @@ export const GraduatesDrawer: React.FC = () => {
                 <p className="drawer-career-card__text">Con orgullo y satisfacción, la generación 2023-2026 presenta a sus egresados</p>
             </div>
 
-            <div className="graduates-drawer__body">
-                {accordionItems.length > 0 ? (
-                    <Accordion items={accordionItems} variant="separated" />
+            <div className="graduates-drawer__body" style={{ padding: '0 2.4rem 2rem' }}>
+                {isLoading ? (
+                    <p className="graduates-drawer__empty">Cargando graduados...</p>
+                ) : tickets.length > 0 ? (
+                    <ul className="graduates-drawer__list">
+                        {tickets.map((ticket) => (
+                            <li key={ticket.id} className="graduates-drawer__item">
+                                {ticket.name}
+                            </li>
+                        ))}
+                    </ul>
                 ) : (
                     <p className="graduates-drawer__empty">Próximamente...</p>
                 )}
@@ -42,3 +35,4 @@ export const GraduatesDrawer: React.FC = () => {
         </Drawer>
     );
 };
+
